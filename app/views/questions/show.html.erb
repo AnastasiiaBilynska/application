@@ -6,9 +6,9 @@
 <time datetime="<%= @question.formatted_created_at %>">
   <%= @question.formatted_created_at %>
 </time>
-<p  class="lead my-4">
-  <%= @question.body %>
-</p>
+<div  class="lead my-4">
+  <%= sanitize  @question.body %>
+</div>
 
 <%= link_to "Show", question_path(@question), class: 'btn btn-primary' %>
 <%= link_to "Edit", edit_question_path(@question), class: 'btn     btn-secondary' %>
@@ -16,19 +16,10 @@
 
 <hr>
 
-<h2>Write your answer</h2>
+<h2 class='m-3'>Write your answer</h2>
 <%= render 'answers/form', object: @answer %>
 
-<article class='m-3'>
-  <h2>Answers</h2>
-    <% @answers.each do |answer| %>
-      <time datetime="<%= answer.formatted_created_at %>">
-        <%= answer.formatted_created_at %>
-      </time>
-      <p>
-        <%= answer.body %>
-      </p>
-      <%= link_to 'Delete', question_answer_path(@question, answer), class: 'btn btn-danger', data: {method: :delete, confirm: "Are you sure?"} %>
-      <%= link_to 'Edit', edit_question_answer_path(@question, answer), class: 'btn btn-secondary' %>
-  </article>
-<% end %>
+<h2 class='m-3'>Answers</h2>
+<%= paginate @answers %>
+  <%= render partial: 'answers/answer', collection: @answers, as: :answer, locals: {question: @question} %>
+  <%= paginate @answers %>
