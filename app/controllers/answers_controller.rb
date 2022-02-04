@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AnswersController < ApplicationController
-    before_action :set_question!
-    before_action :set_answer!, except: :create
+  before_action :set_question!
+  before_action :set_answer!, except: :create
 
   def create
     @answer = @question.answers.build answer_params
@@ -14,12 +16,11 @@ class AnswersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @answer.update answer_params
-      flash[:success] = "Answer has been updated!"
+      flash[:success] = 'Answer has been updated!'
       redirect_to question_path(@question, anchor: "answer-#{@answer.id}")
     else
       render :edit
@@ -28,7 +29,7 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    flash[:success] = "Answer has been deleted!"
+    flash[:success] = 'Answer has been deleted!'
     redirect_to question_path(@question)
   end
 

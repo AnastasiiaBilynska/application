@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QuestionDecorator < ApplicationDecorator
   decorates :question
   delegate_all
