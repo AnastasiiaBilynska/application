@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  before_action :require_no_athentication, only: %i[new create]
-  before_action :require_athentication, only: %i[destroy]
+  before_action :require_no_authentication, only: %i[new create]
+  before_action :require_authentication, only: %i[destroy]
 
   def new; end
 

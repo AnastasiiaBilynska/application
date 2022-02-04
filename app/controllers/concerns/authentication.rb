@@ -20,6 +20,7 @@ module Authentication
       user = User.find_by(id: cookies.encrypted[:user_id])
       token = cookies.encrypted[:remember_token]
       return unless user&.remember_token_authenticated?(token)
+
       sign_in user
       user
     end
@@ -37,6 +38,7 @@ module Authentication
 
     def require_no_authentication
       return unless user_signed_in?
+
       flash[:warning] = 'You are already signed in!'
       redirect_to root_path
     end
