@@ -13,11 +13,15 @@ class User < ApplicationRecord
 
   def remember_me
     self.remember_token = SecureRandom.urlsafe_base64
+    # rubocop:disable Rails/SkipsModelValidations
     update_column :remember_token_digest, digest(remember_token)
+    # rubocop:enable Rails/SkipsModelValidations
   end
 
   def forget_me
+    # rubocop:disable Rails/SkipsModelValidations
     update_column :remember_token_digest, nil
+    # rubocop:enable Rails/SkipsModelValidations
     self.remember_token = nil
   end
 
@@ -46,10 +50,12 @@ class User < ApplicationRecord
   end
 
   def password_complexity
-    return if password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*  [0-9])(?=.*?[#?!@$%^&*-])/
+    return if password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*[0-9])(?=.*?[#?!@$%^&*-])/
 
     errors.add :password,
-               'complexity requirement not met. Length should be  8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1  special character'
+               'complexity requirement not met. Length should be
+               8-70 characters and include: 1 uppercase, 1 lowercase,
+                1 digit and 1 special character'
   end
 
   def password_presence

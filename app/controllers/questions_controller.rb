@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :set_question!, only: %i[show destroy edit update]
+  before_action :_question!, only: %i[show destroy edit update]
 
   def show
     @question = @question.decorate
@@ -15,6 +15,8 @@ class QuestionsController < ApplicationController
     flash[:success] = 'Question has been deleted!'
     redirect_to questions_path
   end
+
+  def edit; end
 
   def update
     if @question.update question_params
@@ -50,7 +52,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :body)
   end
 
-  def set_question!
-    @question ||= Question.find params[:id]
+  def _question!
+    @question ||= Question.find(params[:id])
   end
 end

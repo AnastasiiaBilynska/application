@@ -9,3 +9,5 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Rails/FilePath:
+  EnforcedStyle: arguments
