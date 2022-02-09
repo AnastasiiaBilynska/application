@@ -1,0 +1,142 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+uk:
+  en: Англійська
+  ru: Російська
+  uk: Українська
+  activerecord:
+    models:
+      question: Запитання
+      answer: Відповідь
+      user: Користувач
+    attributes:
+      question:
+        title: 'Заголовок'
+        body: 'Текст'
+      answer:
+        body: Текст
+        question: Запитання
+      user:
+        created_at: Створений
+        email: Емейл
+        name: Ім'я
+        old_password: Старий пароль
+        password: Пароль
+        password_confirmation: Пдтвердження пароля
+        updated_at: Оновлений
+  pages:
+    index:
+      title: 'Вітаємо в AskIt!'
+  menu:
+    home: Головна
+    questions: "Запитання"
+    edit_profile: Профіль
+    log_in: Вхід
+    log_out: Вихід
+    sign_up: Зареєструватись
+    users: Користувачі
+  admin:
+    users:
+      create:
+        success: Юзери завантажені!
+      index:
+        download_zipped: Завантажити стиснутий XLSX
+        title: Адмін Юзери
+        upload_form:
+          archive: Виберіть архів
+          submit: Завантажити!
+        upload_zipped: Завантажити юзерів з XLSX
+  answers:
+    create:
+      success: Відповідь створена!
+    destroy:
+      success: Відповідь видалено!
+    edit:
+      title: Відредагувати відповідь
+    update:
+      success: Відповідь оновлено!
+  global:
+    button:
+      delete: Видалити
+      edit: Відредагувати
+      show: Показати
+      submit: Відправити
+    dialog:
+      you_sure: Ви впевнені?
+    flash:
+      already_signed_in: Ви вже увійшли!
+      not_signed_in: Ви не увійшли!
+    text:
+      omission: "... (продовження)"
+  questions:
+    create:
+      success: Запитання створене!
+    destroy:
+      success: Запитання видалено!
+    edit:
+      title: Відредагувати запитання
+    index:
+      new: Нове запитання
+      title: Запитання
+    new:
+      title: Нове запитання
+    show:
+      answers: Відповіді
+      write_answer: Напишить відповідь
+    update:
+      success: Запитання оновлено!
+  sessions:
+    create:
+      invalid_creds: Неправильна пошта та/або пароль!
+      success: Вітаємо знову, %{name}!
+    destroy:
+      success: Побачимось!
+    new:
+      form:
+        email: Пошта
+        password: Пароль
+        remember_me: Запам'ятати мене
+        submit: Ввійти!
+      title: Ввійти
+  users:
+    create:
+      success: Вітаємо, %{name}!
+    edit:
+      title: Відредагувати профіль
+    global:
+      forms:
+        register: Реєстрація
+        save: Зберегти
+    new:
+      title: Реєстрація
+    update:
+      success: Ваш профіль успішно оновлено!

@@ -1,0 +1,142 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ru:
+  en: Английский
+  ru: Русский
+  uk: Украинский
+  activerecord:
+    models:
+      question: Вопрос
+      answer: Ответ
+      user: Пользователь
+    attributes:
+      question:
+        title: 'Заголовок'
+        body: 'Текст'
+      answer:
+        body: 'Текст'
+        question: Вопрос
+      user:
+        created_at: Создан
+        email: Емейл
+        name: Имя
+        old_password: Старий пароль
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        updated_at: Оновлено
+  pages:
+    index:
+      title: 'Добро пожаловать в AskIt!'
+  menu:
+    home: Главная
+    edit_profile: Профиль
+    log_in: Вход
+    log_out: Выход
+    questions: Вопросы
+    sign_up: Регистрация
+    users: Пользователи
+  admin:
+    users:
+      create:
+        success: Юзеры загружены!
+      index:
+        download_zipped: Загрузить сжатый XLSX
+        title: Админ Юзеры
+        upload_form:
+          archive: Выберите архив
+          submit: Загрузить!
+        upload_zipped: Загрузить юзеров с XLSX
+  answers:
+    create:
+      success: Ответ создан!
+    destroy:
+      success: Ответ удален!
+    edit:
+      title: Отредактировать ответ
+    update:
+      success: Ответ обновлен!
+  global:
+    button:
+      delete: Удалить
+      edit: Отредактировать
+      show: Показать
+      submit: Отправить
+    dialog:
+      you_sure: Вы уверенны?
+    flash:
+      already_signed_in: Вы уже вошли!
+      not_signed_in: Вы не вошли!
+    text:
+      omission: "... (продолжение)"
+  questions:
+    create:
+      success: Вопрос создан!
+    destroy:
+      success: Вопрос удален!
+    edit:
+      title: Отредактировать вопрос
+    index:
+      new: Новый вопрос
+      title: Вопросы
+    new:
+      title: Новый вопрос
+    show:
+      answers: Ответы
+      write_answer: Напишите ответ
+    update:
+      success: Вопрос откоректирован!
+  sessions:
+    create:
+      invalid_creds: Неправильная почта и/или пароль!
+      success: Приветствуем снова, %{name}!
+    destroy:
+      success: Увидимся!
+    new:
+      form:
+        email: Почта
+        password: Пароль
+        remember_me: Запомнить меня
+        submit: Войти!
+      title: Войти
+  users:
+    create:
+      success: Приветствуем, %{name}!
+    edit:
+      title: Отредактировать профиль
+    global:
+      forms:
+        register: Регистрация
+        save: Сохранить
+    new:
+      title: Регистрация
+    update:
+      success: Ваш профиль успешно оновлен!

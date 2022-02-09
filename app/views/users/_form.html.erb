@@ -43,5 +43,5 @@
       </div>
     </div>
   <% end %>
-<%= f.submit (@user.new_record? ? "Sign Up" : "Save"), class: 'btn btn-primary btn-lg' %>
+<%= f.submit (@user.new_record? ? t('users.global.forms.register'): t('users.global.forms.save')), class: 'btn btn-primary btn-lg' %>
 <% end %>

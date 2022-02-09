@@ -67,6 +67,7 @@ gem 'draper', '~> 4.0'
 gem 'kaminari'
 gem 'rubyXL', '~> 3.4'
 # gem 'rubyzip', require: 'zip'
+gem 'rails-i18n', '~> 6'
 gem 'rubyzip', '~> 2'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'valid_email2'
