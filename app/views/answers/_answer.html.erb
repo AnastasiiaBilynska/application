@@ -2,9 +2,15 @@
     <article class='m-3 card' id='answer-<%= answer.id %>'>
       <div class='card-body'>
         <section class='card-text'>
-          <small><time datetime="<%= answer.formatted_created_at %>">
-            <%= answer.formatted_created_at %>
-          </time></small>
+          <div class="mb-3">
+            <%= @question.user.gravatar %>
+            <%= @question.user.name_or_email %>
+            <small class="p-3">
+              <time datetime="<%= answer.formatted_created_at %>">
+                <%= answer.formatted_created_at %>
+              </time>
+            </small>
+          </div>
           <p class='mt-2 mb-3'>
             <%= sanitize answer.body %>
           </p>

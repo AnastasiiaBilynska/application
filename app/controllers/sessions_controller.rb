@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   def do_sign_in(user)
     sign_in(user)
     remember(user) if params[:remember_me] == '1'
-    flash[:success] = t('.success', name: current_user.name_or_email)!"
+    flash[:success] = t('.success', name: current_user.name_or_email) + '!'
     redirect_to root_path
   end
 end

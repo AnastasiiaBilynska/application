@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
   before_action :set_answer!, except: :create
 
   def create
-    @answer = @question.answers.build answer_params
+    @answer = @question.answers.build(create_answer_params)
 
     if @answer.save
       flash[:success] = t '.success'
@@ -21,7 +21,7 @@ class AnswersController < ApplicationController
   def edit; end
 
   def update
-    if @answer.update answer_params
+    if @answer.update(update_answer_params)
       flash[:success] = t '.success'
       redirect_to question_path(@question, anchor: "answer-#{@answer.id}")
     else
@@ -37,7 +37,11 @@ class AnswersController < ApplicationController
 
   private
 
-  def answer_params
+  def create_answer_params
+    params.require(:answer).permit(:body).merge(user_id: current_user.id)
+  end
+
+  def update_answer_params
     params.require(:answer).permit(:body)
   end
 
