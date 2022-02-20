@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
+  include QuestionsAnswers
   before_action :_question!, only: %i[show destroy edit update]
 
   def show
-    @question = @question.decorate
-    @answer = @question.answers.build
-    @answers = @question.answers.order(created_at: :desc).page(params[:page])
-    @answers = @answers.decorate
+    load_questions_answers
   end
 
   def destroy
